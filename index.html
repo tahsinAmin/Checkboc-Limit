@@ -7,19 +7,44 @@
 </head>
 <body>
   <form name=form1 method=post action=check.php>
-    <table class='table table-striped' >    
-      <tr><th >Select</th></tr>
-      <tr><td><input id="married" onclick="spouseRelatedInfo();" type=checkbox name=ckb value=0;>Are you married?</td></tr>
+    
+      <h1>Select</h1>
+
+      <input id="married" onclick="spouseRelatedInfo();" type=checkbox name=ckb value=0;>
+      <label class="form-check-label" for="married">
+        Are you married?
+      </label>
+
       <div id="spouseRelated" style="display: none;">
-        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(1)';>Your spouse or partner’s language level</td></tr>
-        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(2)';>Your spouse or partner’s past studies in Canada</td></tr>
-        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(3)';>Your spouse or common-law partner’s past work in Canada</td></tr>  
+        <input type=checkbox name=ckb value=5 onclick='chkcontrol(1)';>
+        <label class="form-check-label" for="flexCheckDefault">
+          Your spouse or partner’s language level
+        </label>
+        <input type=checkbox name=ckb value=5 onclick='chkcontrol(2)';>
+        <label class="form-check-label" for="sStudy">
+          Your spouse or partner’s past studies in Canada
+        </label>
+        <input type=checkbox name=ckb value=5 onclick='chkcontrol(3)';>
+          <label class="form-check-label" for="flexCheckDefault">
+            Your spouse or common-law partner’s past work in Canada
+          </label>
       </div>
-      <tr><td><input type=checkbox name=ckb value=10 onclick='chkcontrol(4)';>Your past studies in Canada</td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(5)';>Your past work in Canada</td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(6)';>Arranged employment in Canada</td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(7)';>Relatives in Canada</td> </tr>
-    </table>
+      <input type=checkbox name=ckb value=10 onclick='chkcontrol(4)';>
+      <label class="form-check-label" for="flexCheckChecked">
+        Your past studies in Canada
+      </label>
+      <input type=checkbox name=ckb value=5 onclick='chkcontrol(5)';>
+      <label class="form-check-label" for="flexCheckChecked">
+        Your past work in Canada
+      </label>
+      <input type=checkbox name=ckb value=5 onclick='chkcontrol(6)';>
+      <label class="form-check-label" for="flexCheckChecked">
+        Arranged employment in Canada
+      </label>
+      <input type=checkbox name=ckb value=5 onclick='chkcontrol(7)';
+      <label class="form-check-label" for="flexCheckDefault">
+        Relatives in Canada
+      </label>   
   </form>
   <br><br>
   <div id=msg></div>
