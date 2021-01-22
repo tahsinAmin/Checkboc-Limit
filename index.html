@@ -9,21 +9,27 @@
   <form name=form1 method=post action=check.php>
     <table class='table table-striped' >    
       <tr><th >Select</th></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(0)';> Value = 1 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(1)';> Value = 2 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(2)';> Value = 3 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(3)';> Value = 4 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=10 onclick='chkcontrol(4)';> Value = 5 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(5)';> Value = 6 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(6)';> Value = 7 </td></tr>
-      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(7)';> Value = 8 </td>  </tr>
+      <tr><td><input id="married" onclick="spouseRelatedInfo();" type=checkbox name=ckb value=0;>Are you married?</td></tr>
+      <div id="spouseRelated" style="display: none;">
+        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(1)';>Your spouse or partner’s language level</td></tr>
+        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(2)';>Your spouse or partner’s past studies in Canada</td></tr>
+        <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(3)';>Your spouse or common-law partner’s past work in Canada</td></tr>  
+      </div>
+      <tr><td><input type=checkbox name=ckb value=10 onclick='chkcontrol(4)';>Your past studies in Canada</td></tr>
+      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(5)';>Your past work in Canada</td></tr>
+      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(6)';>Arranged employment in Canada</td></tr>
+      <tr><td><input type=checkbox name=ckb value=5 onclick='chkcontrol(7)';>Relatives in Canada</td> </tr>
     </table>
   </form>
-  Sum of the values can't exceed 10. 
   <br><br>
   <div id=msg></div>
 
   <script type="text/javascript"> 
+    function spouseRelatedInfo(){
+      console.log("Hello");
+      var spouseRelated =  document.getElementById("spouseRelated");
+      spouseRelated.style.display = (spouseRelated.style.display == "none") ? "block": "none";
+    }
     function chkcontrol(j) {
       var sum=0;
       for(var i=0; i < document.form1.ckb.length; i++){
@@ -39,8 +45,7 @@
           for(var i=0; i < document.form1.ckb.length; i++){
             document.form1.ckb[i].disabled= true;
           }
-          alert("It seems you have reached the maximum points in adaptibility") 
-        //return false;
+          alert("It seems you have reached the maximum points in the Adaptibility Section") 
         }
         document.getElementById("msg").innerHTML="Sum :"+ sum;
       }
